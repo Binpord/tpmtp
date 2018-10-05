@@ -1,0 +1,32 @@
+Test results:
+amout_of_fragments = 4, count = 12582911, rdtsc_avg = 24
+Test results:
+amout_of_fragments = 5, count = 15728639, rdtsc_avg = 35
+Test results:
+amout_of_fragments = 6, count = 18874367, rdtsc_avg = 37
+Test results:
+amout_of_fragments = 7, count = 22020095, rdtsc_avg = 39
+Test results:
+amout_of_fragments = 8, count = 25165823, rdtsc_avg = 35
+Test results:
+amout_of_fragments = 9, count = 28311551, rdtsc_avg = 46
+Test results:
+amout_of_fragments = 10, count = 31457279, rdtsc_avg = 47
+Test results:
+amout_of_fragments = 11, count = 34603007, rdtsc_avg = 46
+Test results:
+amout_of_fragments = 12, count = 37748735, rdtsc_avg = 46
+Test results:
+amout_of_fragments = 13, count = 40894463, rdtsc_avg = 46
+Test results:
+amout_of_fragments = 14, count = 44040191, rdtsc_avg = 47
+Test results:
+amout_of_fragments = 15, count = 47185919, rdtsc_avg = 47
+Test results:
+amout_of_fragments = 16, count = 50331647, rdtsc_avg = 46
+Test results:
+amout_of_fragments = 17, count = 53477375, rdtsc_avg = 48
+Test results:
+amout_of_fragments = 18, count = 56623103, rdtsc_avg = 47
+Test results:
+amout_of_fragments = 19, count = 59768831, rdtsc_avg = 48
