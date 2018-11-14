@@ -1,0 +1,5 @@
+relay_race.app
+.qmake.stash
+*.o
+Makefile
+moc_*
