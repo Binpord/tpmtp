@@ -7,8 +7,6 @@ class RacingThread : public QThread {
 public:
   RacingThread(int i) : i_(i) {}
 
-  void run() { exec(); }
-
 public slots:
   void takeTurn() {
     std::cout << "Thread " << i_ << " is taking turn..." << std::endl;

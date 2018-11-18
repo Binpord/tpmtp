@@ -9,21 +9,18 @@ class RaceRunner : public QThread {
 public:
   RaceRunner(int N) : N_(N) {}
 
-  void run() {
-    {
-      threads_.emplace_back(0);
-      QObject::connect(this, SIGNAL(startRace()), &threads_.back(),
-                       SLOT(takeTurn()));
-      threads_.back().start();
-    }
+  virtual void run() override {
+    threads_.emplace_back(0);
+    RacingThread *prev = &threads_.back();
+    QObject::connect(this, SIGNAL(startRace()), prev,
+                     SLOT(takeTurn()));
     for (int i = 1; i < N_; ++i) {
-      auto &th = threads_.back();
       threads_.emplace_back(i);
-      QObject::connect(&th, SIGNAL(finishedTurn()), &threads_.back(),
+      QObject::connect(prev, SIGNAL(finishedTurn()), &threads_.back(),
                        SLOT(takeTurn()));
-      threads_.back().start();
+      prev = &threads_.back();
     }
-    QObject::connect(&threads_.back(), SIGNAL(finishedTurn()), this,
+    QObject::connect(prev, SIGNAL(finishedTurn()), this,
                      SLOT(finishRace()));
 
     std::cout << "Race is starting..." << std::endl;
