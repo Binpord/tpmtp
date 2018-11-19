@@ -1,10 +1,10 @@
 #include "race_runner.hpp"
+#include <QCoreApplication>
 #include <cstdlib>
 #include <iostream>
 #include <memory>
 #include <string>
 #include <vector>
-#include <QCoreApplication>
 
 void print_usage(char *progname) {
   std::cout << "Usage:" << std::endl
@@ -27,8 +27,11 @@ int main(int argc, char *argv[]) {
   }
 
   RaceRunner runner(N);
-  runner.start();
-  runner.wait();
+  runner.tuneRunner();
+  RaceRunnerThread th_runner;
+  runner.moveToThread(&th_runner);
+  th_runner.start();
+  th_runner.wait();
 
   return 0;
 }
